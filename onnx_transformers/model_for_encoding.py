@@ -1,13 +1,11 @@
 import logging
-from typing import Optional, Union, List, Tuple
+from typing import Optional, Union, List
 
 import numpy as np
 
 from onnx_transformers.__spi__.model import NetworkInfo, EncodingConfig, ModelConfig
 from onnx_transformers.abstract_model import AbstractModel
 from onnx_transformers.tokenizer.tokenizer import FastTokenizer
-
-Batch = Union[str, List[str], Tuple[str, str], List[Tuple[str, str]]]
 
 
 class ModelForEncoding(AbstractModel):
@@ -22,7 +20,7 @@ class ModelForEncoding(AbstractModel):
         self.tokenizer = FastTokenizer(ModelConfig.from_path(config_path), info)
         self.enc_config = EncodingConfig.from_config(config_path)
 
-    def __call__(self, batch: Batch, config: Optional[EncodingConfig] = None):
+    def __call__(self, batch: Union[str, List[str]], config: Optional[EncodingConfig] = None):
         config = config if config else self.enc_config
         squeeze = not isinstance(batch, list)
 
