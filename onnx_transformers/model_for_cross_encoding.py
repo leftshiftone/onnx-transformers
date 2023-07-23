@@ -19,5 +19,5 @@ class ModelForCrossEncoding(ModelForEncoding):
         self.use_sigmoid = use_sigmoid
 
     def __call__(self, batch: Batch, config: Optional[EncodingConfig] = None):
-        logits = np.squeeze(self.__call__(batch, config))
+        logits = np.squeeze(super().__call__(batch, config))
         return sigmoid(logits) if self.use_sigmoid else logits
