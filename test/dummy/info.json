@@ -1,0 +1,23 @@
+{
+  "group": "x-and-y",
+  "name": "mmarco-mMiniLMv2-L12-H384-v1",
+  "version": "1.0.0",
+  "license": "mit",
+  "size": 487973244,
+  "labels": [],
+  "quantization": null,
+  "optimization": "cpu",
+  "opset_version": 14,
+  "exporter_version": "0.1.0",
+  "base_model": {
+    "url": "https://huggingface.co/Helsinki-NLP/",
+    "name": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
+  },
+  "libraries": {
+    "pytorch": "2.0.1+cu117",
+    "transformers": "4.29.0",
+    "onnx": "1.14.0",
+    "onnxruntime": "1.14.1"
+  },
+  "python": "3.8.10"
+}
