@@ -47,7 +47,7 @@ class ModelForEncoding(AbstractModel):
 
         if isinstance(shape, str):
             logging.warning("cannot determine output shape from onnx session. try to return dim from config")
-            assert "dim" in self.model_config.config, "cannot determine output dim"
-            return self.model_config.dim
+            assert "dim" in self.model_config, "cannot determine output dim"
+            return self.model_config.get("dim")
         # noinspection PyTypeChecker
         return shape
