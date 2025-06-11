@@ -1,1 +1,4 @@
 *.py[cod]
+.eggs
+build
+onnx_transformers.egg-info
