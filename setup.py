@@ -6,12 +6,13 @@ from pathlib import Path
 import pkg_resources
 from setuptools import find_packages, setup
 
+
 long_description = Path(__file__).with_name("README.md").read_text()
 
 setup(
     name="onnx_transformers",
     packages=find_packages(exclude=("test")),
-    version="1.2.0",
+    version="1.2.1",
     license="Apache Software License",
     description="tbd",
     long_description=long_description,
