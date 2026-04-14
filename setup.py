@@ -12,7 +12,7 @@ long_description = Path(__file__).with_name("README.md").read_text()
 setup(
     name="onnx_transformers",
     packages=find_packages(exclude=("test")),
-    version="1.2.1",
+    version="1.2.2",
     license="Apache Software License",
     description="tbd",
     long_description=long_description,
